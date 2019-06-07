@@ -1,0 +1,17 @@
+version: "3.7"
+services:
+  client_dev:
+    container_name: react_firebase
+    build:
+      context: .
+    restart: always
+    hostname: react_firebase
+    ports:
+      - "8080:3000"
+    dns:
+      - 8.8.8.8
+      - 9.9.9.9
+    volumes:
+      - type: bind
+        source: ./
+        target: /app
