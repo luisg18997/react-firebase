@@ -1,6 +1,13 @@
 @import url('../node_modules/bootstrap/dist/css/bootstrap.min.css');
+@import url('../node_modules/font-awesome/css/font-awesome.min.css');
 body {
   margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  height: auto;
+  width: 100%;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
@@ -8,10 +15,29 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+html {
+  height: auto;
+  width: 100%;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.container-fluid {
+  height: auto;
+}
+
+#root {
+  height: auto;
+  background-color: #FAFAFA;
+}
+
+.minh-100 {
+
+    height: 100vh;
+  }
 
 
 .inputTransparente {
@@ -41,5 +67,4 @@ code {
 .inputTransparente:-webkit-autofill:focus,
 .inputTransparente:-webkit-autofill:active {
     transition: background 5000s ease-in-out 0s;
-    -webkit-text-fill-color: white;
 }

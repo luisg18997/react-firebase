@@ -1,8 +1,9 @@
 import * as Yup from "yup";
 
 const validationFrom = Yup.object().shape({
-  username: Yup.string()
+  email: Yup.string()
   .nullable()
+  .email()
   .matches(/^\S*$/, 'not space')
   .required('is required'),
   password: Yup.string()

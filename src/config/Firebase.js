@@ -3,7 +3,6 @@ import'firebase/firestore'
 import 'firebase/auth';
 import 'firebase/database';
 
-const settings = {timestampsInSnapshots: true};
 const config = {
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
   authDomain: process.env.REACT_APP_FIREBASE_AUTHDOMAIN,
@@ -13,8 +12,7 @@ const config = {
   messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGINGSENDERID
 };
 
-firebase.initializeApp(config);
+const app = firebase.initializeApp(config);
 
-firebase.firestore().settings(settings);
 
-export default firebase;
+export default app;

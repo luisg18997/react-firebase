@@ -14,7 +14,7 @@ export const Input = (props) => {
   } = props
   return(
     <Fragment>
-      <input className={touched && error?'py-2 inputTransparente is-invalid':'py-2 inputTransparente'}  type={type} name={name} onChange={handleChange} placeholder={placeholder} value={value} onBlur={handleBlur}/>
+      <input className={touched && error?' inputTransparente is-invalid':' inputTransparente'}  type={type} name={name} onChange={handleChange} placeholder={placeholder} value={value} onBlur={handleBlur}/>
       <ErrorMessage name={name}>{msg => <div className="error error-message" style={{color: '#E92F2F'}}>{msg}</div>}</ErrorMessage>
     </Fragment>
   )
