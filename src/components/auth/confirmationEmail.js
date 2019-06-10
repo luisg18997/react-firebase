@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom'
 import Formik from '../../util/formik'
 import PasswordEmailConfirmationForm from '../forms/passwordEmailConfirmationForm'
 import PasswordEmailConfirmationValidation from '../forms/validations/passwordEmailConfirmationValidation'
-import {ModalError} from '../../util/modal'
+import {ModalSucces,ModalError} from '../../util/modal'
 import {handleRedirect} from '../../util/redirectPage'
 import Fire from '../../config/Firebase'
 
@@ -14,10 +14,9 @@ const EmailConfirmation = () => {
   const handleSubmit = async(value) => {
     setStatus(true)
     try {
-      Fire.auth().sendPasswordResetEmail(value.email,{url: 'http://localhost:3000'})
+      Fire.auth().sendPasswordResetEmail(value.email, {url: `${process.env.REACT_APP_URL}`})
       .then(res => {
-        console.log(res);
-        handleRedirect('/ForgotPassword')
+        ModalSucces('Send email successfully', handleRedirect, '/')
       }).catch(e => {
         ModalError(e.message);
         console.log(e.message);

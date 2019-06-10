@@ -22,6 +22,6 @@ export const ModalSucces = (msg, nameFunction, arg) =>{
   Modal(msg,'success', nameFunction, arg)
 }
 
-export const ModalError = (msg) =>{
-  Modal(msg,'error')
+export const ModalError = (msg, nameFunction, arg) =>{
+  Modal(msg,'error', nameFunction, arg)
 }

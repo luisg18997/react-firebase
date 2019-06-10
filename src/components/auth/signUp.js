@@ -15,13 +15,19 @@ const SingUp = () => {
   const handleSubmit = async(value) => {
     setStatus(true)
     try {
-      console.log(value);
       Fire.auth().createUserWithEmailAndPassword(value.email, value.password)
       .then(res => {
         Fire.auth().currentUser.updateProfile({
           displayName: value.name
         })
-        ModalSucces('user created successfully', handleRedirect, '/')
+        Fire.auth().currentUser.sendEmailVerification({url: `${process.env.REACT_APP_URL}` })
+        .then(() => {
+          ModalSucces('user created successfully', handleRedirect, '/PostRegister')
+        })
+        .catch(e => {
+          ModalError(e.message);
+          console.log(e.message);
+        })
       })
       .catch(e => {
         ModalError(e.message);

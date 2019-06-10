@@ -5,6 +5,7 @@ import LogInForm from '../forms/logInForm'
 import LogInValidation from '../forms/validations/logInValidation'
 import Fire from '../../config/Firebase'
 import {ModalError} from '../../util/modal'
+import {handleRedirect} from '../../util/redirectPage'
 
 
 const LogIn = () => {
@@ -17,6 +18,11 @@ const LogIn = () => {
         Fire.auth().signInWithEmailAndPassword(value.email, value.password)
         .then(res => {
           console.log(res.user);
+          if(res.user.emailVerified === true) {
+            handleRedirect('/Dashboard')
+          }else{
+              ModalError('email no verified');
+          }
         })
         .catch(e => {
           ModalError(e.message);

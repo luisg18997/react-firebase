@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-const ForgotPassword = () => {
+const Add = () => {
 
   return(
     <div className='container_fluid'>
@@ -10,4 +10,4 @@ const ForgotPassword = () => {
 }
 
 
-export default ForgotPassword
+export default Add

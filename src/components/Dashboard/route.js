@@ -5,8 +5,11 @@ const PrincipalRouter = () => {
   return(
     <Fragment>
         <Switch>
-          <Route exact path='/' />
-          <Route path='/Dashboard' />
+          <Route exact path='/Dashboard' />
+          <Route path='/Dashboard/todo/edit' />
+          <Route path='/Dashboard/todo/add' />
+          <Route path='/Dashboard/todo/view' />
+          <Route path='/Dashboard/todo/list' />
         </Switch>
     </Fragment>
   )
