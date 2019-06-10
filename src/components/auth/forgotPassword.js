@@ -34,8 +34,7 @@ useEffect(() => {
   const handleSubmit = async(value, event) => {
     setStatus(true)
     try {
-      console.log(value);
-      Fire.auth().verifyPasswordResetCode(oobCode, value.password)
+      Fire.auth().confirmPasswordReset(oobCode, value.password)
       .then((res) =>{
           ModalSucces('Password successfully changed', handleRedirect, '/')
       })
