@@ -1,13 +1,17 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import Routes from './route'
+import NavBar from './navBar'
 
 
 const Dashboard = () => {
 
   return(
+    <Fragment>
     <div className='container_fluid'>
-    <Routes />
+    <NavBar />
     </div>
+      <Routes />
+      </Fragment>
   )
 }
 

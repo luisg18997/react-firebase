@@ -5,6 +5,7 @@ const List = () => {
 
   return(
     <div className='container_fluid'>
+    list
     </div>
   )
 }

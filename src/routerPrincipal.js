@@ -20,7 +20,7 @@ const PrincipalRouter = () => {
           <Route path='/EmailConfirmation'  component={EmailConfirmation}/>
           <Route path='/ForgotPassword'  component={ForgotPassword}/>
           <Route path='/authAction' component={AuthAction} />
-          <Route path='Dashboard' component={Dashboard}/>
+          <Route path='/Dashboard' component={Dashboard}/>
         </Switch>
     </Fragment>
   )

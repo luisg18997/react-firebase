@@ -5,6 +5,7 @@ const Add = () => {
 
   return(
     <div className='container_fluid'>
+    add
     </div>
   )
 }

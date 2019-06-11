@@ -5,6 +5,7 @@ const View = () => {
 
   return(
     <div className='container_fluid'>
+    view
     </div>
   )
 }
