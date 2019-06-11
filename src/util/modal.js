@@ -25,3 +25,19 @@ export const ModalSucces = (msg, nameFunction, arg) =>{
 export const ModalError = (msg, nameFunction, arg) =>{
   Modal(msg,'error', nameFunction, arg)
 }
+
+
+export const ModalConfirm = (contet, FunctionName, value) => {
+  return MySwal.fire({
+    width: 'auto',
+    type: 'info',
+    text: contet,
+    cancelButtonColor: '#dc3545',
+    showCancelButton: true,
+    reverseButtons: true
+}).then((result) => {
+  if (result.value) {
+    FunctionName(value)
+  }
+})
+}

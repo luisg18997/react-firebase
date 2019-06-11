@@ -1,5 +1,23 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom'
+import {ModalConfirm} from '../../util/modal'
+import Fire from '../../config/Firebase'
+import {handleRedirect} from '../../util/redirectPage'
+
+
+const HandleLogout = () => {
+  Fire.auth().signOut()
+  .then(() => {
+    handleRedirect('/')
+  })
+  .catch((e) =>{
+    handleRedirect('/')
+  })
+}
+
+const HandleLogoutQuestion = () => {
+  ModalConfirm('Sure of logout?', HandleLogout,'')
+}
 
 const NavBar = () => {
 
@@ -29,7 +47,7 @@ const NavBar = () => {
               <NavLink to='/Dashboard/todo/list' className='nav-link'><span>List</span></NavLink>
             </li>
             <li className='nav-item mr-2 ml-3'>
-              <NavLink onClick={()=>console.log('logout')} className='nav-link'><span>Logout</span></NavLink>
+              <NavLink onClick={()=>HandleLogoutQuestion()} className='nav-link'><span>Logout</span></NavLink>
             </li>
           </ul>
         </div>
