@@ -5,6 +5,7 @@
 /.pnp
 .pnp.js
 package-lock.json
+yar.lock
 .env
 .firebase
 firebase-debug.log
